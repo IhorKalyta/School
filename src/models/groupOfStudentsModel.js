@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const groupOfStudentsSchema = mongoose.Schema({
 	nameOfGroup: {
 		type: String,
+		unique: true,
 		required: true
 	},
 	participants: [{
