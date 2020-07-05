@@ -22,11 +22,9 @@ app.use('/teachers', teacherRoutes);
 app.use('/students', studentRoutes);
 app.use('/groupOfStudents', groupOfStudentRoutes);
 
-const port = process.env.PORT || 8080;
-
 connectDb().then(async () => {
-	app.listen(port, function () {
-		console.log('Running School on port ' + port);
+	app.listen(process.env.PORT, function () {
+		console.log('Running School on port ' + process.env.PORT);
 	});
 });
 
