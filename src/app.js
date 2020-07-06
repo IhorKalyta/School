@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const connectDb = require('./db/connect');
@@ -27,28 +28,3 @@ connectDb().then(async () => {
 		console.log('Running School on port ' + process.env.PORT);
 	});
 });
-
-//--> Testing Mongo <--
-
-// let Lesson = require('./models/lessonModel');
-// const GroupOfStudents = require('./models/groupOfStudentsModel');
-
-// const getLessonWithPopulate = function(id) {
-//     return Lesson.findById(id).populate("groupOfStudents").populate("participants");
-// };
-
-// const run = async function() {
-//     let lesson = await getLessonWithPopulate('5efdf539aff79f1c24ea1ee8');
-//     console.log("\n>> populated Lesson:\n", lesson);
-// };
-
-// const getGroupWithPopulate = function(id) {
-//     return GroupOfStudents.findById(id).populate("participants");
-// };
-
-// const run1 = async function() {
-//     let group = await getGroupWithPopulate('5efdf49caff79f1c24ea1ee7');
-//     console.log("\n>> populated group:\n", group);
-// };
-
-// run1();
