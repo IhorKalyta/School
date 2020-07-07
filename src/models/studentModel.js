@@ -6,6 +6,10 @@ const studentSchema = Schema({
 		type: String,
 		unique: true,
 		required: true
+	},
+	group: {
+		type: Schema.Types.ObjectId,
+		ref: 'GroupOfStudents'
 	}
 });
 
