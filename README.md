@@ -6,6 +6,5 @@ To start server
 3. Copy to .env data from .env.example
 4. Run command "npm install" to install dependencies
 5. Run command "npm run dev" to start server
-
-![alt text](./schema_visualisation.png)
+## 
 ![Screenshot](schema_visualisation.png)
