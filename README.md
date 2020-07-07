@@ -7,5 +7,5 @@ To start server
 4. Run command "npm install" to install dependencies
 5. Run command "npm run dev" to start server
 
-![](https://whimsical.com/UDFGu7dsUKtDytkW2s6bxd)
-Format: ![Alt Text](url)
+![](<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/UDFGu7dsUKtDytkW2s6bxd"></iframe>)
+(url)
