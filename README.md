@@ -6,3 +6,6 @@ To start server
 3. Copy to .env data from .env.example
 4. Run command "npm install" to install dependencies
 5. Run command "npm run dev" to start server
+
+![](https://whimsical.com/UDFGu7dsUKtDytkW2s6bxd)
+Format: ![Alt Text](url)
