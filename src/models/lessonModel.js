@@ -18,7 +18,7 @@ const lessonSchema = Schema({
 		type: String,
 		required: true,
 	},
-	create_date: {
+	startTime: {
 		type: Date,
 		default: Date.now,
 	},

@@ -34,7 +34,7 @@ exports.newLesson = function (req, res) {
 	lesson.teacher = req.body.teacher;
 	lesson.groupOfStudents = req.body.groupOfStudents;
 	lesson.room = req.body.room;
-	lesson.create_date = req.body.create_date;
+	lesson.startTime = req.body.startTime;
 
 	lesson.save(function (err) {
 		if (err) {
@@ -57,7 +57,7 @@ exports.updateLesson = function (req, res) {
 		lesson.teacher = req.body.teacher;
 		lesson.groupOfStudents = req.body.groupOfStudents;
 		lesson.room = req.body.room;
-		lesson.create_date = req.body.create_date;
+		lesson.startTime = req.body.startTime;
 
 		lesson.save(function (err) {
 			if (err) {
