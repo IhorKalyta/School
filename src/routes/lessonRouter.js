@@ -1,8 +1,7 @@
 const lessonController = require('../controllers/lessonController');
 const router = require('express').Router();
-const auth = require('../middlewares/auth');
 
-router.route('/',auth)
+router.route('/')
 	.get(lessonController.getAllLessons)
 	.post(lessonController.newLesson);
 
