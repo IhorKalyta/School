@@ -11,6 +11,6 @@ module.exports = (req, res, next) => {
 			return next();
 		});
 	} else {
-		return res.status(401).json({ message: 'Unathorized' });
+		res.status(401).json({ message: 'Unathorized' });
 	}
 };

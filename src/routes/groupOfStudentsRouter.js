@@ -1,5 +1,5 @@
-const groupOfStudentsController = require('../controllers/groupOfStudentsController');
 const router = require('express').Router();
+const groupOfStudentsController = require('../controllers/groupOfStudentsController');
 
 router.route('/')
 	.get(groupOfStudentsController.getAllGroupsOfStudents)

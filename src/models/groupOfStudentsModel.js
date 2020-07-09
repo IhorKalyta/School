@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
+const { Schema } = mongoose;
 
 const groupOfStudentsSchema = mongoose.Schema({
 	nameOfGroup: {
 		type: String,
 		unique: true,
-		required: true
+		required: true,
 	},
 	participants: [{
 		type: Schema.Types.ObjectId,
-		ref: 'Student'
+		ref: 'Student',
 	}],
 	lessons: [{
 		type: Schema.Types.ObjectId,
-		ref: 'Lesson'
-	}]
+		ref: 'Lesson',
+	}],
 });
 
 const GroupOfStudents = mongoose.model('GroupOfStudents', groupOfStudentsSchema);

@@ -15,7 +15,7 @@ const groupOfStudentRoutes = require('./routes/groupOfStudentsRouter');
 app.use(
 	bodyParser.urlencoded({
 		extended: true,
-	})
+	}),
 );
 app.use(bodyParser.json());
 
@@ -27,7 +27,5 @@ app.use('/students', auth, studentRoutes);
 app.use('/groupOfStudents', auth, groupOfStudentRoutes);
 
 connectDb().then(async () => {
-	app.listen(process.env.PORT, function () {
-		console.log('Running School on port ' + process.env.PORT);
-	});
+	app.listen(process.env.PORT, () => console.log(`Running School on port ${process.env.PORT}`));
 });

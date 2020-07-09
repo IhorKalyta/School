@@ -1,5 +1,5 @@
 module.exports = {
-	extends: 'eslint:recommended',
+	extends: 'airbnb-base',
 	env: {
 		browser: true,
 		commonjs: true,
@@ -13,6 +13,9 @@ module.exports = {
 		indent: ['error', 'tab'],
 		semi: ['error', 'always'],
 		quotes: ['error', 'single'],
-		'no-trailing-spaces': [2, { 'skipBlankLines': true }]
+		'no-trailing-spaces': [2, { skipBlankLines: true }],
+		'no-tabs': 0,
+		'linebreak-style': 0,
+		'no-param-reassign': [2, { props: false }],
 	},
 };

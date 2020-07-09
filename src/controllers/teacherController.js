@@ -1,14 +1,14 @@
 const Teacher = require('../models/teacherModel');
 
-exports.getAllTeachers = function (req, res) {
-	Teacher.find(function (err, teachers) {
+exports.getAllTeachers = (req, res) => {
+	Teacher.find((err, teachers) => {
 		if (err) {
-			res.json({
+			return res.json({
 				status: 'error',
 				message: err,
 			});
 		}
-		res.json({
+		return res.json({
 			status: 'success',
 			message: 'Teachers retrieved successfully',
 			data: teachers,
@@ -16,11 +16,11 @@ exports.getAllTeachers = function (req, res) {
 	});
 };
 
-exports.newTeacher = function (req, res) {
-	let teacher = new Teacher();
+exports.newTeacher = (req, res) => {
+	const teacher = new Teacher();
 	teacher.name = req.body.name ? req.body.name : teacher.name;
 
-	teacher.save(function (err) {
+	teacher.save((err) => {
 		if (err) {
 			res.json(err);
 		}
@@ -32,12 +32,12 @@ exports.newTeacher = function (req, res) {
 	});
 };
 
-exports.deleteTeacher = function (req, res) {
+exports.deleteTeacher = (req, res) => {
 	Teacher.remove(
 		{
 			_id: req.params.teacher_id,
 		},
-		function (err) {
+		(err) => {
 			if (err) {
 				res.send(err);
 			}
@@ -45,6 +45,6 @@ exports.deleteTeacher = function (req, res) {
 				status: 'success',
 				message: 'Teacher deleted',
 			});
-		}
+		},
 	);
 };

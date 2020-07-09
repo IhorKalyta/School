@@ -1,14 +1,14 @@
 const GroupOfStudents = require('../models/groupOfStudentsModel');
 
-exports.getAllGroupsOfStudents = function (req, res) {
-	GroupOfStudents.find(function (err, groupOfStudents) {
+exports.getAllGroupsOfStudents = (req, res) => {
+	GroupOfStudents.find((err, groupOfStudents) => {
 		if (err) {
-			res.json({
+			return res.json({
 				status: 'error',
 				message: err,
 			});
 		}
-		res.json({
+		return res.json({
 			status: 'success',
 			message: 'Group of students retrieved successfully',
 			data: groupOfStudents,
@@ -16,15 +16,15 @@ exports.getAllGroupsOfStudents = function (req, res) {
 	});
 };
 
-exports.newGroupOfStudents = function (req, res) {
-	let groupOfStudents = new GroupOfStudents();
+exports.newGroupOfStudents = (req, res) => {
+	const groupOfStudents = new GroupOfStudents();
 	groupOfStudents.nameOfGroup = req.body.nameOfGroup
 		? req.body.nameOfGroup
 		: groupOfStudents.nameOfGroup;
 	groupOfStudents.participants = req.body.participants;
 	groupOfStudents.lessons = req.body.lessons;
 
-	groupOfStudents.save(function (err) {
+	groupOfStudents.save((err) => {
 		if (err) {
 			res.json(err);
 		}
@@ -36,12 +36,12 @@ exports.newGroupOfStudents = function (req, res) {
 	});
 };
 
-exports.deleteGroupOfStudent = function (req, res) {
+exports.deleteGroupOfStudent = (req, res) => {
 	GroupOfStudents.deleteOne(
 		{
 			_id: req.params.groupOfStudents_id,
 		},
-		function (err) {
+		(err) => {
 			if (err) {
 				res.send(err);
 			}
@@ -49,6 +49,6 @@ exports.deleteGroupOfStudent = function (req, res) {
 				status: 'success',
 				message: 'Group of students deleted',
 			});
-		}
+		},
 	);
 };

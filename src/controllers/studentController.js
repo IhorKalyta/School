@@ -1,14 +1,14 @@
 const Student = require('../models/studentModel');
 
-exports.getAllStudents = function (req, res) {
-	Student.find(function (err, students) {
+exports.getAllStudents = (req, res) => {
+	Student.find((err, students) => {
 		if (err) {
-			res.json({
+			return res.json({
 				status: 'error',
 				message: err,
 			});
 		}
-		res.json({
+		return res.json({
 			status: 'success',
 			message: 'Students retrieved successfully',
 			data: students,
@@ -16,11 +16,11 @@ exports.getAllStudents = function (req, res) {
 	});
 };
 
-exports.newStudent = function (req, res) {
-	let student = new Student();
+exports.newStudent = (req, res) => {
+	const student = new Student();
 	student.name = req.body.name ? req.body.name : student.name;
 
-	student.save(function (err) {
+	student.save((err) => {
 		if (err) {
 			res.json(err);
 		}
@@ -32,12 +32,12 @@ exports.newStudent = function (req, res) {
 	});
 };
 
-exports.deleteStudent = function (req, res) {
+exports.deleteStudent = (req, res) => {
 	Student.deleteOne(
 		{
 			_id: req.params.student_id,
 		},
-		function (err) {
+		(err) => {
 			if (err) {
 				res.send(err);
 			}
@@ -45,6 +45,6 @@ exports.deleteStudent = function (req, res) {
 				status: 'success',
 				message: 'Student deleted',
 			});
-		}
+		},
 	);
 };
